@@ -32,8 +32,8 @@ La mayoria de los archivos extraidos de la API tenian una buena integridad, por 
 ### [3. Analisis Exploratorio](notebooks/3.%20Exploratory_Data_Analysis.ipynb)
 Una vez comprobada la integridad de los datos y definidos los archivos, se realizó un analisis exploratorio de datos para investigar el comportamiento de la variables del dataset. 
 
-![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
-*Dirección de API usada para extraer datos de datastreams*
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/barplot-patagonia-accesos.png)
+*Accesos por año en las provincas de la region de la Patagonia*
 
 ### [4. Construcción de dashboards](visualizations/)
 Despues del EDA, se utilizó Power BI para realizar dashboards que faciliten la lectura y analisis de los datos. A continuación uno de los dashboards creados con esta herramienta.
@@ -43,6 +43,7 @@ Despues del EDA, se utilizó Power BI para realizar dashboards que faciliten la 
 
 
 # Documentación Extra
+- [En la Argentina ya hay más de 7 millones de accesos fijos a internet](https://www.infobae.com/economia/2017/06/13/en-la-argentina-ya-hay-mas-de-7-millones-de-accesos-fijos-a-internet/)
 - [El 11,9 % de las conexiones a internet en Argentina son por fibra óptica](https://www.infobae.com/tecno/2020/07/14/el-119-de-las-conexiones-a-internet-en-argentina-son-por-fibra-optica/)
 
 # Herramientas usadas
