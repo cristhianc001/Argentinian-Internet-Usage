@@ -1,6 +1,6 @@
-# Analisis de datos del estado y evolución del internet fijo de Argentina
+# Analisis del estado y evolución del internet fijo de Argentina
 
-![Portada](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)  
+![Portada](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/portada.png)  
 
 ## Introducción
 
@@ -17,11 +17,11 @@
 ### [1. Extracción de Datos](notebooks/1.%20Data_Extraction.ipynb)
 Los datos usados en este analisis fueron extraidos del [Ente Nacional de Comunicaciones](https://datosabiertos.enacom.gob.ar/dashboards/20000/acceso-a-internet/) correspondientes al area de Acceso a Internet. Para esto, se consultó la documentación de la API para hallar la dirección de los [datasets](https://api.datosabiertos.enacom.gob.ar/api/v2/datasets/?auth_key=AUTH_KEY) que se accede despues de solicitar una [llave de autenticación](https://datosabiertos.enacom.gob.ar/developers/). La información disponible en el servidor esta en tres presentanciones: datasets, los cuales son archivos de excel donde pueden existar mas de una tabla por archivo; datastreams, que son archivos csv que contienen una tabla por archivo. Estos datastream son desgloses de los dataset. Por ultimo, visualizaciones, como su nombre lo indica, son representaciones visuales de los datastream.
 
-![Dataset, datastreams y visualizaciones](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
+![Dataset, datastreams y visualizaciones](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/ejemplo-dataset-api.png)
 *El link del dataset esta subrayado en azul, los datastream en rojo y las visualizaciones en amarillo*
 
 Como los datastreams ya estaban en .csv, se usaron estos como objetivo de extracción en lugar de los datasets que estan formato .xlsx
-![API de datastream](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
+![API de datastream](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/ejemplo-datastream-api.png)
 *Dirección de API usada para extraer datos de datastreams*
 
 El glosario de terminos que aparecen en las tablas se puede consultar en este [enlace](https://www.estadisticaciudad.gob.ar/eyc/publicaciones/anuario_2005/Cd_Cap13/dyc13.htm#:~:text=Dial%2DUp%3A%20son%20conexiones%20que,servicio%20de%20acceso%20a%20Internet).
