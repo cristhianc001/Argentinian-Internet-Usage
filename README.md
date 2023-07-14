@@ -27,10 +27,10 @@ Como los datastreams ya estaban en .csv, se usaron estos como objetivo de extrac
 El glosario de terminos que aparecen en las tablas se puede consultar en este [enlace](https://www.estadisticaciudad.gob.ar/eyc/publicaciones/anuario_2005/Cd_Cap13/dyc13.htm#:~:text=Dial%2DUp%3A%20son%20conexiones%20que,servicio%20de%20acceso%20a%20Internet).
 
 ### [2. Transformación y Limpieza](notebooks/2.%20Data_Wrangling.ipynb)
-La mayoria de los archivos extraidos de la API tenian una buena integridad, por lo tanto se realizaron pocas operaciones sobre los dataframes. Las mayores transformaciones involucraron union (merge) de tablas para resumir el numero de archivos y 'pivotear' (melt) columnas en filas. Tambien se borraron las comas (,) de las todas las cifras donde estaban presentes para que no hayan problemas de interpretación de miles, millares y punto decimales. 
+La mayoria de los archivos extraidos de la API tenian una buena integridad, por lo tanto se realizaron pocas operaciones sobre los dataframes. Las mayores transformaciones involucraron union (merge) de tablas para resumir el numero de archivos y 'despivotear' (melt) columnas en filas. Tambien se borraron las comas (entre otros caracteres especiales) de las todas las cifras donde estaban presentes para que no hayan problemas de interpretación de miles, millares y punto decimales. 
 
 ### [3. Analisis Exploratorio](notebooks/3.%20Exploratory_Data_Analysis.ipynb)
-Una vez comprobada la integridad de los datos y definidos los archivos, se realizó un analisis exploratorio de datos para investigar el comportamiento de la variables del dataset. 
+Una vez comprobada la integridad de los datos y definidos los archivos, se realizó un analisis exploratorio de datos para investigar graficamente el comportamiento de la variables del dataset. 
 
 ![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/barplot-patagonia-accesos.png)
 *Accesos por año en las provincas de la region de la Patagonia*
@@ -43,6 +43,8 @@ Despues del EDA, se utilizó Power BI para realizar dashboards que faciliten la 
 
 
 # Documentación Extra
+- [Datos Abiertos de ENACOM](https://datosabiertos.enacom.gob.ar/home)
+- [Junar - Documentación de API v2](https://junar.github.io/docs/es/)
 - [En la Argentina ya hay más de 7 millones de accesos fijos a internet](https://www.infobae.com/economia/2017/06/13/en-la-argentina-ya-hay-mas-de-7-millones-de-accesos-fijos-a-internet/)
 - [El 11,9 % de las conexiones a internet en Argentina son por fibra óptica](https://www.infobae.com/tecno/2020/07/14/el-119-de-las-conexiones-a-internet-en-argentina-son-por-fibra-optica/)
 
