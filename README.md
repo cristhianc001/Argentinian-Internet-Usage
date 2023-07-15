@@ -42,7 +42,8 @@ Despues del EDA, se utilizó Power BI para realizar dashboards que faciliten la 
 *Dashboard Power BI*
 
 
-# Documentación Extra
+# Documentación
+- [Definiciones y conceptos](https://www.estadisticaciudad.gob.ar/eyc/publicaciones/anuario_2005/Cd_Cap13/dyc13.htm#:~:text=Dial-Up:%20son%20conexiones%20que,servicio%20de%20acceso%20a%20Internet)
 - [Datos Abiertos de ENACOM](https://datosabiertos.enacom.gob.ar/home)
 - [Junar - Documentación de API v2](https://junar.github.io/docs/es/)
 - [En la Argentina ya hay más de 7 millones de accesos fijos a internet](https://www.infobae.com/economia/2017/06/13/en-la-argentina-ya-hay-mas-de-7-millones-de-accesos-fijos-a-internet/)
