@@ -77,6 +77,9 @@ En terminos de accesos totales, el comportamiento teniendo en cuenta los trimest
 
 ![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/linea-accesos-nacional.png)
 
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/mapa-accesos-2022.png)
+
 El analisis mas completo para las variables de velocidad, accesos y cobertura en todas las provincias puede encontrarse en el notebook dedidaco al EDA.
 
 ### [D. Motor de Base de Datos](sql/)
@@ -99,6 +102,8 @@ Una vez lista la base de datos, se utilizó Power BI y su conexión con MySQL pa
 
 
 ## 4. Documentación
+- [API Georef](https://datos.gob.ar/dataset/jgm-servicio-normalizacion-datos-geograficos/archivo/jgm_8.1)
+- [CAPAS SIG](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG)
 - [Definiciones y conceptos](https://www.estadisticaciudad.gob.ar/eyc/publicaciones/anuario_2005/Cd_Cap13/dyc13.htm#:~:text=Dial-Up:%20son%20conexiones%20que,servicio%20de%20acceso%20a%20Internet)
 - [Datos Abiertos de ENACOM](https://datosabiertos.enacom.gob.ar/home)
 - [Junar - Documentación de API v2](https://junar.github.io/docs/es/)
