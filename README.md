@@ -18,6 +18,7 @@
 
 
 ## 1. Introducción
+El presente repositorio contiene el analisis de datos del internet fijo de Argentina entre 2014 y 2022, teniendo en cuenta variables como accesos, valocidad de baja y cobertura a nivel nacional y regional. El proyecto va desde la extracción de datos consultando una API gubernamental, pasando por una limpieza y analisis exploratorio de los datos, hasta la elaboración de una base de datos y de dashboards para comunicar los hallazgos encontrados.
 
 ## 2. Estructura
 
@@ -81,8 +82,8 @@ El analisis mas completo para las variables de velocidad, accesos y cobertura en
 ### [D. Motor de Base de Datos](sql/)
 Los archivos .csv fueron importados a una base de datos para que sean usados por Power BI mas adelante. El motor usado fue MySQL 8.0.28 al cual se le introdujeron las tablas por medio del wizard de Workbench.
 
-![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
-*Dashboard Power BI*
+![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/wizard-mysql.png)
+*Wizard de MySQL Workbench*
 
 La codificación UTF-8 de MySQL no pudo reconocer tildes, por lo tanto, ademas de la creación de una tabla dimensional de provincias, se le realizó una pequeña limpieza antes de usar esos datos en Power BI.
 
@@ -90,11 +91,11 @@ La codificación UTF-8 de MySQL no pudo reconocer tildes, por lo tanto, ademas d
 ### [E. Construcción de dashboards](visualizations/)
 Una vez lista la base de datos, se utilizó Power BI y su conexión con MySQL para realizar la toma de tablas de dicha base y la elaboración de dashboards que faciliten la lectura y analisis de los datos.
 
-![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
-*Dashboard Power BI*
+![Conexión Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql.png)
+*Conexión a una base de datos local desde Power BI*
 
-![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
-*Dashboard Power BI*
+![Conexión Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
+*Usuario y Password de la base de datos local*
 
 
 ## 4. Documentación
