@@ -36,7 +36,7 @@ Año,Trimestre,Provincia,Accesos por cada 100 hogares,Accesos por cada 100 hab,M
 2022,2,La Pampa,92.98,31,16.07
 2022,2,La Rioja,80.14,21,43.28
 2022,2,Mendoza,49.39,14,29.72
-2022,2,Misiones,51,14,46.23
+2022,2,Misiones,51.0,14,46.23
 2022,2,Neuquén,80.02,24,46.53
 2022,2,Río Negro,67.85,21,33.26
 2022,2,Salta,57.54,14,38.77
@@ -116,10 +116,10 @@ Año,Trimestre,Provincia,Accesos por cada 100 hogares,Accesos por cada 100 hab,M
 2021,3,San Luis,79.87,23,21.7
 2021,3,Santa Cruz,43.75,13,7.69
 2021,3,Santa Fe,75.02,24,33.13
-2021,3,Santiago Del Estero,47,12,13.35
+2021,3,Santiago Del Estero,47.0,12,13.35
 2021,3,Tierra Del Fuego,94.95,28,9.52
 2021,3,Tucumán,54.64,14,42.1
-2021,2,Buenos Aires,70,23,52.76
+2021,2,Buenos Aires,70.0,23,52.76
 2021,2,Capital Federal,110.14,45,72.75
 2021,2,Catamarca,52.34,13,42.19
 2021,2,Chaco,43.33,12,37.4
@@ -181,12 +181,12 @@ Año,Trimestre,Provincia,Accesos por cada 100 hogares,Accesos por cada 100 hab,M
 2020,4,La Rioja,50.11,13,12.53
 2020,4,Mendoza,38.63,11,11.09
 2020,4,Misiones,42.64,12,24.96
-2020,4,Neuquén,67,20,33.91
+2020,4,Neuquén,67.0,20,33.91
 2020,4,Río Negro,61.09,19,21.64
 2020,4,Salta,54.04,13,25.32
 2020,4,San Juan,36.32,9,6.41
 2020,4,San Luis,81.68,23,21.25
-2020,4,Santa Cruz,37,11,7.49
+2020,4,Santa Cruz,37.0,11,7.49
 2020,4,Santa Fe,73.58,23,27.29
 2020,4,Santiago Del Estero,43.75,11,11.28
 2020,4,Tierra Del Fuego,76.27,23,8.49
@@ -235,7 +235,7 @@ Año,Trimestre,Provincia,Accesos por cada 100 hogares,Accesos por cada 100 hab,M
 2020,2,San Juan,35.09,9,6.31
 2020,2,San Luis,78.41,22,21.02
 2020,2,Santa Cruz,35.79,11,6.59
-2020,2,Santa Fe,70,22,23.93
+2020,2,Santa Fe,70.0,22,23.93
 2020,2,Santiago Del Estero,43.47,11,10.41
 2020,2,Tierra Del Fuego,76.37,23,8.13
 2020,2,Tucumán,51.78,13,32.7
@@ -339,7 +339,7 @@ Año,Trimestre,Provincia,Accesos por cada 100 hogares,Accesos por cada 100 hab,M
 2019,1,Capital Federal,109.2,46,24.72
 2019,1,Catamarca,32.19,8,7.96
 2019,1,Chaco,32.64,9,13.44
-2019,1,Chubut,43,13,5.89
+2019,1,Chubut,43.0,13,5.89
 2019,1,Córdoba,65.52,20,15.73
 2019,1,Corrientes,35.13,9,12.05
 2019,1,Entre Ríos,56.79,17,10.66
@@ -668,7 +668,7 @@ Año,Trimestre,Provincia,Accesos por cada 100 hogares,Accesos por cada 100 hab,M
 2015,4,San Luis,9.71,3,3.5
 2015,4,Santa Cruz,27.74,8,3.48
 2015,4,Santa Fe,52.61,16,4.81
-2015,4,Santiago Del Estero,17,4,4.09
+2015,4,Santiago Del Estero,17.0,4,4.09
 2015,4,Tierra Del Fuego,66.46,19,3.47
 2015,4,Tucumán,37.06,9,4.88
 2015,3,Buenos Aires,57.69,18,4.7
@@ -763,7 +763,7 @@ Año,Trimestre,Provincia,Accesos por cada 100 hogares,Accesos por cada 100 hab,M
 2014,4,San Juan,28.04,7,3.48
 2014,4,San Luis,9.79,3,3.5
 2014,4,Santa Cruz,27.8,8,3.33
-2014,4,Santa Fe,50,16,3.78
+2014,4,Santa Fe,50.0,16,3.78
 2014,4,Santiago Del Estero,17.27,4,3.46
 2014,4,Tierra Del Fuego,66.14,19,3.47
 2014,4,Tucumán,35.32,9,3.86

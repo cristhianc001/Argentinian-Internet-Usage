@@ -2,19 +2,35 @@
 
 ![Portada](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/portada.png)  
 
-## Introducción
 
-## Estructura
+# Tabla de Contenido
+
+- [1. Introducción](#1-introduccion)
+- [2. Estructura](#2-estructura)
+- [3. Procedimiento](#3-procedimiento)
+  - [A. Extracción de Datos](#a-extracción-de-datos)
+  - [B. Transformación y Limpieza](#b-transformación-y-limpieza)
+  - [C. Analisis Exploratorio de Datos](#c-analisis-exploratorio-de-datos)
+  - [D. Motor de Base de Datos](#d-motor-de-base-de-datos)
+  - [E. Construcción de dashboards](#e-construcción-de-dashboards)
+- [4. Documentación](#4-documentación)
+- [5. Herramientas Usadas](#5-herramientas-usadas)
+
+
+## 1. Introducción
+
+## 2. Estructura
 
 - [`raw_data`](/raw_data.zip): Los datos sin procesar usados en este proyecto se tomaron directamente de la API gubernamental, pero si hay problemas de red en el servidor, hay una copia de seguridad en el archivo `raw_data.zip` en la raíz de este repositorio.
 - [`processed_data/`](processed_data/): contiene los datos transformados y limpios en formato CSV.
 - [`notebooks/`](notebooks/): Incluye notebooks de Python para limpieza de datos, EDA y visualización. También hay un script de python que importa los datos de la API directamente.
+- [`sql/`](sql/): Scripts de SQL de limpiezas menores, creación de dimensiones y relación de tablas.
 - [`img/`](img/): Incluye imágenes utilizadas en el readme.
 - [`visualizations/`](visualizations/): Incluye graficos de Python, dashboards y archivos de Power BI para visualización de datos.
 
-## Procedimiento
+## 3. Procedimiento
 
-### [1. Extracción de Datos](notebooks/1.%20Data_Extraction.ipynb)
+### [A. Extracción de Datos](notebooks/1.%20Data_Extraction.ipynb)
 Los datos usados en este analisis fueron extraidos del [Ente Nacional de Comunicaciones](https://datosabiertos.enacom.gob.ar/dashboards/20000/acceso-a-internet/) correspondientes al area de Acceso a Internet. Para esto, se consultó la documentación de la API para hallar la dirección de los [datasets](https://api.datosabiertos.enacom.gob.ar/api/v2/datasets/?auth_key=AUTH_KEY) que se accede despues de solicitar una [llave de autenticación](https://datosabiertos.enacom.gob.ar/developers/). La información disponible en el servidor esta en tres presentanciones: datasets, los cuales son archivos de excel donde pueden existar mas de una tabla por archivo; datastreams, que son archivos csv que contienen una tabla por archivo. Estos datastream son desgloses de los dataset. Por ultimo, visualizaciones, como su nombre lo indica, son representaciones visuales de los datastream.
 
 ![Dataset, datastreams y visualizaciones](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/ejemplo-dataset-api.png)
@@ -26,30 +42,69 @@ Como los datastreams ya estaban en .csv, se usaron estos como objetivo de extrac
 
 El glosario de terminos que aparecen en las tablas se puede consultar en este [enlace](https://www.estadisticaciudad.gob.ar/eyc/publicaciones/anuario_2005/Cd_Cap13/dyc13.htm#:~:text=Dial%2DUp%3A%20son%20conexiones%20que,servicio%20de%20acceso%20a%20Internet).
 
-### [2. Transformación y Limpieza](notebooks/2.%20Data_Wrangling.ipynb)
+### [B. Transformación y Limpieza](notebooks/2.%20Data_Wrangling.ipynb)
 La mayoria de los archivos extraidos de la API tenian una buena integridad, por lo tanto se realizaron pocas operaciones sobre los dataframes. Las mayores transformaciones involucraron union (merge) de tablas para resumir el numero de archivos y 'despivotear' (melt) columnas en filas. Tambien se borraron las comas (entre otros caracteres especiales) de las todas las cifras donde estaban presentes para que no hayan problemas de interpretación de miles, millares y punto decimales. 
 
-### [3. Analisis Exploratorio](notebooks/3.%20Exploratory_Data_Analysis.ipynb)
-Una vez comprobada la integridad de los datos y definidos los archivos, se realizó un analisis exploratorio de datos para investigar graficamente el comportamiento de la variables del dataset. 
+### [C. Analisis Exploratorio de Datos](notebooks/3.%20Exploratory_Data_Analysis.ipynb)
+Una vez comprobada la integridad de los datos y definidos los archivos, se realizó un analisis exploratorio de datos para investigar graficamente el comportamiento de la variables del dataset. Se encontraron hallazgos como el progreso continuo de accesos en las provincias, excepto en la Ciudad Federal, que registra un ligero estancamiento:
 
-![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/barplot-patagonia-accesos.png)
-*Accesos por año en las provincas de la region de la Patagonia*
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/barplot-central-accesos.png)
+*Accesos por año en las provincas de la region central*
 
-### [4. Construcción de dashboards](visualizations/)
-Despues del EDA, se utilizó Power BI para realizar dashboards que faciliten la lectura y analisis de los datos. A continuación uno de los dashboards creados con esta herramienta.
+Este ligero estancamiento se explica por la gran cobertura de la ciudad en terminos de internet fijo, puede decirse que ha llegado a un techo.
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/lineas-central-accesos-100.png)
+*Accesos por cada 100 hogares en las provincas de la region central*
+
+Este comportamiento tambien se observa al comparar las proporciones de los accesos. La proporcion de accesos de la Capital Federal disminuye con el tiempo, pero no es porque los accesos disminuyan, es porque los accesos se mantienen casi constantes mientras crecen en el resto del pais.
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/pie-accesos-provincia.png)
+
+Otro comportamiento resaltable es de la provincia de San Luis. Los accesos de esta provincia se dispararon en el 2017, la razon de esto puede deberse a programas de inversion publicos o privado o a un cambio en la metodologia de medición.
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/barplot-cuyo-accesos.png)
+
+La velocidad de bajada promedio tambien tiene una tendencia particular en San Luis, es la unica provincia donde baja en los ultimos periodos medidos.
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/lineas-velocidad-media-cuyo.png)
+
+En el contexto nacional, se presenta una bajada significativa en el rango de velocidad de 1 - 6 Mbps y una subida de +30 Mbps, esto potenciado por la presencia mayor de la fibra optica en el pais.
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/barras-apiladas-velocidad.png)
+
+En terminos de accesos totales, el comportamiento teniendo en cuenta los trimestres es el esperado: conforme transucurren los trimestres, cada vez aumentan mas los accesos pues el ultimo trimestre recoge los resultados de los anteriores. Hay excepciones que se perciben en el segundo grafico de lineas, donde se notan disminuciones de accesos en algunos trimestres, la mas notoria en el ultimo trimestre del 2019.
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/linea-accesos-nacional.png)
+
+El analisis mas completo para las variables de velocidad, accesos y cobertura en todas las provincias puede encontrarse en el notebook dedidaco al EDA.
+
+### [D. Motor de Base de Datos](sql/)
+Los archivos .csv fueron importados a una base de datos para que sean usados por Power BI mas adelante. El motor usado fue MySQL 8.0.28 al cual se le introdujeron las tablas por medio del wizard de Workbench.
+
+![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
+*Dashboard Power BI*
+
+La codificación UTF-8 de MySQL no pudo reconocer tildes, por lo tanto, ademas de la creación de una tabla dimensional de provincias, se le realizó una pequeña limpieza antes de usar esos datos en Power BI.
+
+
+### [E. Construcción de dashboards](visualizations/)
+Una vez lista la base de datos, se utilizó Power BI y su conexión con MySQL para realizar la toma de tablas de dicha base y la elaboración de dashboards que faciliten la lectura y analisis de los datos.
+
+![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
+*Dashboard Power BI*
 
 ![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/movie-recommendation-system/main/img/wordcloud.png)
 *Dashboard Power BI*
 
 
-# Documentación
+## 4. Documentación
 - [Definiciones y conceptos](https://www.estadisticaciudad.gob.ar/eyc/publicaciones/anuario_2005/Cd_Cap13/dyc13.htm#:~:text=Dial-Up:%20son%20conexiones%20que,servicio%20de%20acceso%20a%20Internet)
 - [Datos Abiertos de ENACOM](https://datosabiertos.enacom.gob.ar/home)
 - [Junar - Documentación de API v2](https://junar.github.io/docs/es/)
 - [En la Argentina ya hay más de 7 millones de accesos fijos a internet](https://www.infobae.com/economia/2017/06/13/en-la-argentina-ya-hay-mas-de-7-millones-de-accesos-fijos-a-internet/)
 - [El 11,9 % de las conexiones a internet en Argentina son por fibra óptica](https://www.infobae.com/tecno/2020/07/14/el-119-de-las-conexiones-a-internet-en-argentina-son-por-fibra-optica/)
 
-# Herramientas usadas
+## 5. Herramientas usadas
 - [Pandas](https://pandas.pydata.org/docs/), [requests](https://requests.readthedocs.io/en/latest/) fueron las librerias usadas para la extracción y limpieza de datos.
 - [Matplotlib](https://matplotlib.org/stable/index.html), [Seaborn](https://seaborn.pydata.org/) fueron las librerias usadas para la visualización de datos.
 - [Power BI](https://powerbi.microsoft.com/es-es/) fue la herramiento de creación de dashboard usada.
