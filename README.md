@@ -81,6 +81,10 @@ En terminos de accesos totales, el comportamiento teniendo en cuenta los trimest
 
 
 ![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/mapa-accesos-2022.png)
+*Mapa de Accesos con Matplotlib*
+
+![Grafico de EDA](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/mapa-plotly.png)
+*Mapa de Accesos por cada 100 hogares con Plotly*
 
 El analisis mas completo para las variables de velocidad, accesos y cobertura en todas las provincias puede encontrarse en el notebook dedidaco al EDA.
 
