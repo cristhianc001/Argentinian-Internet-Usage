@@ -2,7 +2,7 @@
 
 ![Portada](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/portada.png)  
 
-Cualquier consulta u observación es bienvinida en mi perfil de Github o en [LinkedIn](https://www.linkedin.com/in/cristhiancastro/)
+Cualquier consulta u observación es bienvenida en mi perfil de Github o en [LinkedIn](https://www.linkedin.com/in/cristhiancastro/)
 
 # Tabla de Contenido
 
@@ -109,21 +109,23 @@ Los datos disponibles no disponen de fecha especificas, los atributos de tiempo 
 
     FechaSimulada = DATE([Año], 3 * ([Trimestre] - 1 ) + 1, 1)
 
-![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
+![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/modelo-power-bi.png)
 *Modelo relacional en Power BI*
 
 Los dashboards realizados con este modelo se muestran a continuación:
 
-![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
-*Modelo relacional en Power BI*
+![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/dashboard-accesos.png)
+*Dashboard de Accesos y Cobertura*
 
 
-![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
-*Modelo relacional en Power BI*
+![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/dashboard-conexion.png)
+*Dashboard de Tipos de Conexion*
 
 
-![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
-*Modelo relacional en Power BI*
+![Dashboard Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/visualizations/dashboard-velocidad.png)
+*Dashboard de Velocidad*
+
+El archivo .pbix esta en la carpeta de [visualizations](visualizations/) si se requiero un vistazo mas profundo,
 
 ## 4. Documentación
 - [API Georef](https://datos.gob.ar/dataset/jgm-servicio-normalizacion-datos-geograficos/archivo/jgm_8.1)
