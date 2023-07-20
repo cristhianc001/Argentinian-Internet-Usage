@@ -2,6 +2,7 @@
 
 ![Portada](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/portada.png)  
 
+Cualquier consulta u observación es bienvinida en mi perfil de Github o en [LinkedIn](https://www.linkedin.com/in/cristhiancastro/)
 
 # Tabla de Contenido
 
@@ -15,6 +16,7 @@
   - [E. Construcción de dashboards](#e-construcción-de-dashboards)
 - [4. Documentación](#4-documentación)
 - [5. Herramientas Usadas](#5-herramientas-usadas)
+- [6. Contacto](#6-contacto)
 
 
 ## 1. Introducción
@@ -100,10 +102,33 @@ Una vez lista la base de datos, se utilizó Power BI y su conexión con MySQL pa
 ![Conexión Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
 *Usuario y Password de la base de datos local*
 
+Para complementar el analisis, también se importaron directamente a Power BI los archivos .csv de la población de Argentina y de los accesos de internet movil a través de los años, ademas de una tabla dimensional de provincias con información de latitud y longitud para realizar mapas de cobertura. 
+
+Los datos disponibles no disponen de fecha especificas, los atributos de tiempo corresponden a año y trimestre, para facilitar el uso de filtros, se creara una columna "fechaSimulada" en cada tabla con año y trimestre y luego se enlaza con una tabla dimensional de calendario.
+
+
+    FechaSimulada = DATE([Año], 3 * ([Trimestre] - 1 ) + 1, 1)
+
+![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
+*Modelo relacional en Power BI*
+
+Los dashboards realizados con este modelo se muestran a continuación:
+
+![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
+*Modelo relacional en Power BI*
+
+
+![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
+*Modelo relacional en Power BI*
+
+
+![Modelo Power BI](https://raw.githubusercontent.com/cristhianc001/argentinian-telecommunications-analysis/main/img/powerbi-mysql2.png)
+*Modelo relacional en Power BI*
 
 ## 4. Documentación
 - [API Georef](https://datos.gob.ar/dataset/jgm-servicio-normalizacion-datos-geograficos/archivo/jgm_8.1)
 - [CAPAS SIG](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG)
+- [Población, total - Argentina](https://datos.bancomundial.org/indicator/SP.POP.TOTL?locations=AR)
 - [Definiciones y conceptos](https://www.estadisticaciudad.gob.ar/eyc/publicaciones/anuario_2005/Cd_Cap13/dyc13.htm#:~:text=Dial-Up:%20son%20conexiones%20que,servicio%20de%20acceso%20a%20Internet)
 - [Datos Abiertos de ENACOM](https://datosabiertos.enacom.gob.ar/home)
 - [Junar - Documentación de API v2](https://junar.github.io/docs/es/)
@@ -112,6 +137,10 @@ Una vez lista la base de datos, se utilizó Power BI y su conexión con MySQL pa
 
 ## 5. Herramientas usadas
 - [Pandas](https://pandas.pydata.org/docs/), [requests](https://requests.readthedocs.io/en/latest/) fueron las librerias usadas para la extracción y limpieza de datos.
-- [Matplotlib](https://matplotlib.org/stable/index.html), [Seaborn](https://seaborn.pydata.org/) fueron las librerias usadas para la visualización de datos.
-- [Power BI](https://powerbi.microsoft.com/es-es/) fue la herramiento de creación de dashboard usada.
+- [Matplotlib](https://matplotlib.org/stable/index.html), [Seaborn](https://seaborn.pydata.org/), [Plotly](https://plotly.com/python/getting-started/) fueron las librerias usadas para la visualización de datos.
+- [Power BI](https://powerbi.microsoft.com/es-es/) como herramienta de creación de dashboards.
+- [MySQL](https://www.mysql.com/) como motor de bases de datos.
 - [Visual Studio Code](https://code.visualstudio.com/) es el editor de código usado en este proyecto.
+
+## 6. Contacto
+- [LinkedIn](https://www.linkedin.com/in/cristhiancastro/)

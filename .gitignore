@@ -2,4 +2,3 @@ venv/
 auth_key.txt
 __pycache__
 raw_data/
-*.pbix
